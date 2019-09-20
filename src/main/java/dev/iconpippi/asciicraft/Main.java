@@ -1,7 +1,7 @@
 package dev.iconpippi.asciicraft;
 
 /**
- * 9/19/2019
+ * 19/9/2019
  * Java wrapper for MainKt
  *
  * @author IconPippi

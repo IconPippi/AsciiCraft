@@ -5,15 +5,32 @@ import java.awt.Font
 import javax.swing.JFrame
 import javax.swing.JTextArea
 
-class Console(private val width: Int, private val height: Int, name: String) {
+/**
+ * 19/9/2019
+ * This class represents the game screen
+ *
+ * @param width Screen width
+ * @param height Screen height
+ * @param name Window name
+ *
+ * @author IconPippi
+ */
+class ASCIIDisplay(private val width: Int, private val height: Int, name: String) {
 
+    //Swing components
     private val mainFrame = JFrame(name)
     private val pixelArea = JTextArea()
 
-    val lines: Array<Line> = Array(54) {
+    /**
+     * The display is divided in an array of lines
+     */
+    val lines: Array<Line> = Array(54) {//TODO: Calculate the array size from the height
         return@Array Line()
     }
 
+    /**
+     * Set up the screen
+     */
     fun setUp() {
 
         mainFrame.contentPane.layout = null
@@ -35,10 +52,18 @@ class Console(private val width: Int, private val height: Int, name: String) {
 
     }
 
+    /**
+     * Open the a new ASCII display window
+     */
     fun show() {
         mainFrame.isVisible = true
     }
 
+    /**
+     * Add a line to the display
+     *
+     * @param line Line
+     */
     fun addLine(line: String) {
         pixelArea.append(line)
     }

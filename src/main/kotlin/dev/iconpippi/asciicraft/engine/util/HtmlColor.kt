@@ -1,9 +1,17 @@
 package dev.iconpippi.asciicraft.engine.util
 
+/**
+ * 20/9/2019
+ * A compilation of Html color tags
+ *
+ * @author IconPippi
+ */
 object HtmlColor {
 
+    // Null
     const val NULL: String = "<span style='color:EMPTY'>"
 
+    // Colors
     const val RED: String = "<span style='color:red'>"
     const val BLUE: String = "<span style='color:blue'>"
     const val GREEN: String = "<span style='color:green'>"

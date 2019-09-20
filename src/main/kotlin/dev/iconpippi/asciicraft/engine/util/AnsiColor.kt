@@ -1,5 +1,11 @@
 package dev.iconpippi.asciicraft.engine.util
 
+/**
+ * 19/9/2019
+ * A compilation of Ansi color codes
+ *
+ * @author IconPippi
+ */
 object AnsiColor {
 
     // Null
