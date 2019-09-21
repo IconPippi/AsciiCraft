@@ -1,9 +1,11 @@
-package dev.iconpippi.asciicraft.engine.console
+package dev.iconpippi.asciicraft.engine.display
 
+import dev.iconpippi.asciicraft.engine.display.components.Line
 import java.awt.Color
 import java.awt.Font
 import javax.swing.JFrame
-import javax.swing.JTextArea
+import javax.swing.JTextPane
+import javax.swing.text.StyledDocument
 
 /**
  * 19/9/2019
@@ -19,13 +21,16 @@ class ASCIIDisplay(private val width: Int, private val height: Int, name: String
 
     //Swing components
     private val mainFrame = JFrame(name)
-    private val pixelArea = JTextArea()
+    private val pixelArea = JTextPane()
+
+    /** ASCII text component */
+    val textComponent: StyledDocument = pixelArea.styledDocument
 
     /**
      * The display is divided in an array of lines
      */
     val lines: Array<Line> = Array(54) {//TODO: Calculate the array size from the height
-        return@Array Line()
+        return@Array Line(this)
     }
 
     /**
@@ -58,15 +63,5 @@ class ASCIIDisplay(private val width: Int, private val height: Int, name: String
     fun show() {
         mainFrame.isVisible = true
     }
-
-    /**
-     * Add a line to the display
-     *
-     * @param line Line
-     */
-    fun addLine(line: String) {
-        pixelArea.append(line)
-    }
-
 
 }

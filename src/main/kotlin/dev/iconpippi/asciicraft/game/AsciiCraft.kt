@@ -2,7 +2,7 @@ package dev.iconpippi.asciicraft.game
 
 import dev.iconpippi.asciicraft.engine.DisplayManager
 import dev.iconpippi.asciicraft.engine.Renderer
-import dev.iconpippi.asciicraft.engine.util.HtmlColor
+import java.awt.Color
 
 /**
  * 19/9/2019
@@ -17,7 +17,9 @@ class AsciiCraft {
      */
     fun start() {
         DisplayManager.setupConsole()
-        Renderer.drawPixel(0, 0, HtmlColor.BLUE)
+        Renderer.drawChar(1, 0, 'Y', Color.GREEN)
+        Renderer.drawChar(2, 0, 'Y', Color.GREEN)
+        Renderer.drawPixel(50, 25, Color.GREEN)
         Renderer.renderScreen()
     }
 

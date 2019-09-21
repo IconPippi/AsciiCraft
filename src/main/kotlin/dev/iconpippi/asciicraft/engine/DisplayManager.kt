@@ -1,6 +1,6 @@
 package dev.iconpippi.asciicraft.engine
 
-import dev.iconpippi.asciicraft.engine.console.ASCIIDisplay
+import dev.iconpippi.asciicraft.engine.display.ASCIIDisplay
 
 /**
  * 19/9/2019
