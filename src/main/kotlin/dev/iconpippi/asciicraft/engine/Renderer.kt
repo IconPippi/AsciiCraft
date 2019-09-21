@@ -48,4 +48,89 @@ object Renderer {
         asciiDisplay.lines[y].addChar(x, ASCIIChar(char, color))
     }
 
+    /**
+     * Draw a pixels rectangle
+     *
+     * @param x1 First corner X
+     * @param y1 First corner Y
+     * @param x2 Second corner X
+     * @param y2 Second corner Y
+     * @param color Color
+     */
+    fun drawPixelRectangle(x1: Int, y1: Int, x2: Int, y2: Int, color: Color) {
+        //I sincerely apologize for your eyes
+        if (y1 > y2) {
+            if (x1 < x2) {
+                for (i in y2 until y1) {
+                    for (j in x1 until x2) {
+                        asciiDisplay.lines[i].addPixel(j, Pixel(color))
+                    }
+                }
+            } else {
+                for (i in y2 until y1) {
+                    for (j in x2 until x1) {
+                        asciiDisplay.lines[i].addPixel(j, Pixel(color))
+                    }
+                }
+            }
+        } else {
+            if (x1 < x2) {
+                for (i in y1 until y2) {
+                    for (j in x1 until x2) {
+                        asciiDisplay.lines[i].addPixel(j, Pixel(color))
+                    }
+                }
+            } else {
+                for (i in y1 until y2) {
+                    for (j in x2 until x1) {
+                        asciiDisplay.lines[i].addPixel(j, Pixel(color))
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * Draw a characters rectangle
+     *
+     * @param x1 First corner X
+     * @param y1 First corner Y
+     * @param x2 Second corner X
+     * @param y2 Second corner Y
+     * @param char Character
+     * @param color Color
+     */
+    fun drawCharRectangle(x1: Int, y1: Int, x2: Int, y2: Int, char: Char, color: Color) {
+        //I sincerely apologize for your eyes
+        if (y1 > y2) {
+            if (x1 < x2) {
+                for (i in y2 until y1) {
+                    for (j in x1 until x2) {
+                        asciiDisplay.lines[i].addChar(j, ASCIIChar(char, color))
+                    }
+                }
+            } else {
+                for (i in y2 until y1) {
+                    for (j in x2 until x1) {
+                        asciiDisplay.lines[i].addChar(j, ASCIIChar(char, color))
+                    }
+                }
+            }
+        } else {
+            if (x1 < x2) {
+                for (i in y1 until y2) {
+                    for (j in x1 until x2) {
+                        asciiDisplay.lines[i].addChar(j, ASCIIChar(char, color))
+                    }
+                }
+            } else {
+                for (i in y1 until y2) {
+                    for (j in x2 until x1) {
+                        asciiDisplay.lines[i].addChar(j, ASCIIChar(char, color))
+                    }
+                }
+            }
+        }
+    }
+
 }

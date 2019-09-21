@@ -2,6 +2,7 @@ package dev.iconpippi.asciicraft.game
 
 import dev.iconpippi.asciicraft.engine.DisplayManager
 import dev.iconpippi.asciicraft.engine.Renderer
+import dev.iconpippi.asciicraft.game.art.AsciiCraftLogo
 import java.awt.Color
 
 /**
@@ -10,16 +11,16 @@ import java.awt.Color
  *
  * @author IconPippi
  */
-class AsciiCraft {
+class AsciiCraft : Thread() {
 
     /**
      * Start the game
      */
-    fun start() {
+    override fun start() {
         DisplayManager.setupConsole()
-        Renderer.drawChar(1, 0, 'Y', Color.GREEN)
-        Renderer.drawChar(2, 0, 'Y', Color.GREEN)
-        Renderer.drawPixel(50, 25, Color.GREEN)
+
+        AsciiCraftLogo.draw(false)
+
         Renderer.renderScreen()
     }
 
