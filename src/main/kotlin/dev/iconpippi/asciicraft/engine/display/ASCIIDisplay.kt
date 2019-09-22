@@ -1,8 +1,11 @@
 package dev.iconpippi.asciicraft.engine.display
 
 import dev.iconpippi.asciicraft.engine.display.components.Line
+import dev.iconpippi.asciicraft.game.AsciiCraft
 import java.awt.Color
 import java.awt.Font
+import java.awt.Image
+import java.awt.Toolkit
 import javax.swing.JFrame
 import javax.swing.JTextPane
 import javax.swing.text.StyledDocument
@@ -46,6 +49,8 @@ class ASCIIDisplay(private val width: Int, private val height: Int, name: String
 
         mainFrame.contentPane.background = Color.BLACK
 
+        //mainFrame.iconImage = Toolkit.getDefaultToolkit().getImage(this.javaClass.getResource("AsciiCraftLogo.png"))
+
         pixelArea.font = Font("Courier New", Font.BOLD, 12)
 
         pixelArea.setBounds(0,0, width, height)
@@ -62,6 +67,13 @@ class ASCIIDisplay(private val width: Int, private val height: Int, name: String
      */
     fun show() {
         mainFrame.isVisible = true
+    }
+
+    /**
+     * Set the background color
+     */
+    fun setBackground(color: Color) {
+        pixelArea.background = color
     }
 
 }

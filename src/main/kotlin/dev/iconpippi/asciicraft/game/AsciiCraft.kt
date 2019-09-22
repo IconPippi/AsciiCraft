@@ -19,6 +19,7 @@ class AsciiCraft : Thread() {
     override fun start() {
         DisplayManager.setupConsole()
 
+        AsciiCraftLogo.xPos = 16
         AsciiCraftLogo.draw(false)
 
         Renderer.renderScreen()

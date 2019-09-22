@@ -8,6 +8,9 @@ package dev.iconpippi.asciicraft.game
  */
 interface ASCIIArt {
 
+    var xPos: Int
+    var yPos: Int
+
     /**
      * Draw the art
      *
