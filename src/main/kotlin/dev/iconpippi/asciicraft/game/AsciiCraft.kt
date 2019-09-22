@@ -3,6 +3,7 @@ package dev.iconpippi.asciicraft.game
 import dev.iconpippi.asciicraft.engine.DisplayManager
 import dev.iconpippi.asciicraft.engine.Renderer
 import dev.iconpippi.asciicraft.game.art.AsciiCraftLogo
+import dev.iconpippi.asciicraft.game.art.AsciiCraftTitle
 import java.awt.Color
 
 /**
@@ -19,8 +20,9 @@ class AsciiCraft : Thread() {
     override fun start() {
         DisplayManager.setupConsole()
 
-        AsciiCraftLogo.xPos = 16
+        AsciiCraftLogo.xPos = 21
         AsciiCraftLogo.draw(false)
+        AsciiCraftTitle.draw(false)
 
         Renderer.renderScreen()
     }

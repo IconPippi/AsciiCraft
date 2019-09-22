@@ -17,80 +17,84 @@ object AsciiCraftLogo : ASCIIArt {
 
     override fun draw(render: Boolean) {
 
-        drawRow(')', ')', ')', '#', '#', ')',
-            '#', ')', ')', ')', ')', ')', ')', ')', '#', ')', color = Color.GREEN, y = yPos)
+        //Light chars: ')' '/'
+        //Dark chars: '#' '$'
+        //Super light: '"' ','
 
-        drawBlock(xPos, yPos+3, ')', Color.GREEN)
-        drawBlock(xPos+4, yPos+3, ')', Color.GREEN)
-        drawBlock(xPos+8, yPos+3, ')', Color.GREEN)
-        drawBlock(xPos+12, yPos+3, '/', Color.GREEN)
-        drawBlock(xPos+16, yPos+3, '/', Color.GREEN)
-        drawBlock(xPos+20, yPos+3, '#', Color.DARK_GRAY)
-        drawBlock(xPos+24, yPos+3, '#', Color.GREEN)
-        drawBlock(xPos+28, yPos+3, '#', Color.GREEN)
-        drawBlock(xPos+32, yPos+3, '#', Color.GREEN)
-        drawBlock(xPos+36, yPos+3, '/', Color.GREEN)
-        drawBlock(xPos+40, yPos+3, '/', Color.GREEN)
-        drawBlock(xPos+44, yPos+3, ')', Color.GREEN)
-        drawBlock(xPos+48, yPos+3, '#', Color.GREEN)
-        drawBlock(xPos+52, yPos+3, ')', Color.GREEN)
-        drawBlock(xPos+56, yPos+3, ')', Color.GREEN)
-        drawBlock(xPos+60, yPos+3, ')', Color.GREEN)
+        drawRow('#', '#', '#', ')', ')', '#',
+            ')', '#', '#', '#', '#', '#', '#', '#', ')', '#', color = Color.GREEN, y = yPos)
 
-        drawBlock(xPos, yPos+6, ')', Color.GREEN)
-        drawBlock(xPos+4, yPos+6, '#', Color.DARK_GRAY)
-        drawBlock(xPos+8, yPos+6, '/', Color.GREEN)
-        drawBlock(xPos+12, yPos+6, '#', Color.GREEN)
-        drawBlock(xPos+16, yPos+6, '#', Color.GREEN)
-        drawBlock(xPos+20, yPos+6, '#', Color.DARK_GRAY)
-        drawBlock(xPos+24, yPos+6, '#', Color.GREEN)
-        drawBlock(xPos+28, yPos+6, '#', Color.DARK_GRAY)
-        drawBlock(xPos+32, yPos+6, ')', Color.GREEN)
-        drawBlock(xPos+36, yPos+6, ')', Color.GREEN)
-        drawBlock(xPos+40, yPos+6, '/', Color.GREEN)
-        drawBlock(xPos+44, yPos+6, '/', Color.GREEN)
-        drawBlock(xPos+48, yPos+6, '#', Color.DARK_GRAY)
-        drawBlock(xPos+52, yPos+6, '#', Color.GREEN)
-        drawBlock(xPos+56, yPos+6, '#', Color.GREEN)
-        drawBlock(xPos+60, yPos+6, '#', Color.DARK_GRAY)
+        drawBlock(xPos, yPos+3, '#', Color.GREEN)
+        drawBlock(xPos+4, yPos+3, '#', Color.GREEN)
+        drawBlock(xPos+8, yPos+3, '#', Color.GREEN)
+        drawBlock(xPos+12, yPos+3, '$', Color.GREEN)
+        drawBlock(xPos+16, yPos+3, '$', Color.GREEN)
+        drawBlock(xPos+20, yPos+3, ')', Color.DARK_GRAY)
+        drawBlock(xPos+24, yPos+3, ')', Color.GREEN)
+        drawBlock(xPos+28, yPos+3, ')', Color.GREEN)
+        drawBlock(xPos+32, yPos+3, ')', Color.GREEN)
+        drawBlock(xPos+36, yPos+3, '$', Color.GREEN)
+        drawBlock(xPos+40, yPos+3, '$', Color.GREEN)
+        drawBlock(xPos+44, yPos+3, '#', Color.GREEN)
+        drawBlock(xPos+48, yPos+3, ')', Color.GREEN)
+        drawBlock(xPos+52, yPos+3, '#', Color.GREEN)
+        drawBlock(xPos+56, yPos+3, '#', Color.GREEN)
+        drawBlock(xPos+60, yPos+3, '#', Color.GREEN)
 
-        drawBlock(xPos, yPos+9, '#', Color.DARK_GRAY)
-        drawBlock(xPos+4, yPos+9, ',', Color.DARK_GRAY)
-        drawBlock(xPos+8, yPos+9, '#', Color.DARK_GRAY)
-        drawBlock(xPos+12, yPos+9, '#', Color.DARK_GRAY)
-        drawBlock(xPos+16, yPos+9, '#', Color.GREEN)
-        drawBlock(xPos+20, yPos+9, '#', Color.DARK_GRAY)
-        drawBlock(xPos+24, yPos+9, '#', Color.DARK_GRAY)
-        drawBlock(xPos+28, yPos+9, '#', Color.DARK_GRAY)
-        drawBlock(xPos+32, yPos+9, '#', Color.GREEN)
-        drawBlock(xPos+36, yPos+9, '#', Color.DARK_GRAY)
-        drawBlock(xPos+40, yPos+9, '#', Color.GREEN)
-        drawBlock(xPos+44, yPos+9, '#', Color.DARK_GRAY)
-        drawBlock(xPos+48, yPos+9, '$', Color.DARK_GRAY)
-        drawBlock(xPos+52, yPos+9, '#', Color.DARK_GRAY)
-        drawBlock(xPos+56, yPos+9, '#', Color.DARK_GRAY)
-        drawBlock(xPos+60, yPos+9, '$', Color.DARK_GRAY)
+        drawBlock(xPos, yPos+6, '#', Color.GREEN)
+        drawBlock(xPos+4, yPos+6, ')', Color.DARK_GRAY)
+        drawBlock(xPos+8, yPos+6, '$', Color.GREEN)
+        drawBlock(xPos+12, yPos+6, ')', Color.GREEN)
+        drawBlock(xPos+16, yPos+6, ')', Color.GREEN)
+        drawBlock(xPos+20, yPos+6, ')', Color.DARK_GRAY)
+        drawBlock(xPos+24, yPos+6, ')', Color.GREEN)
+        drawBlock(xPos+28, yPos+6, ')', Color.DARK_GRAY)
+        drawBlock(xPos+32, yPos+6, '#', Color.GREEN)
+        drawBlock(xPos+36, yPos+6, '#', Color.GREEN)
+        drawBlock(xPos+40, yPos+6, '$', Color.GREEN)
+        drawBlock(xPos+44, yPos+6, '$', Color.GREEN)
+        drawBlock(xPos+48, yPos+6, ')', Color.DARK_GRAY)
+        drawBlock(xPos+52, yPos+6, ')', Color.GREEN)
+        drawBlock(xPos+56, yPos+6, ')', Color.GREEN)
+        drawBlock(xPos+60, yPos+6, ')', Color.DARK_GRAY)
 
-        drawRow('/', '$', '/', ')', '#', '/',
-            '/', '/', '#', '#', '#', ',', '$', '/', '#', '$', color = Color.DARK_GRAY, y = yPos+12)
+        drawBlock(xPos, yPos+9, ')', Color.DARK_GRAY)
+        drawBlock(xPos+4, yPos+9, ',', Color.DARK_GRAY)//Pixel
+        drawBlock(xPos+8, yPos+9, ')', Color.DARK_GRAY)
+        drawBlock(xPos+12, yPos+9, ')', Color.DARK_GRAY)
+        drawBlock(xPos+16, yPos+9, ')', Color.GREEN)
+        drawBlock(xPos+20, yPos+9, ')', Color.DARK_GRAY)
+        drawBlock(xPos+24, yPos+9, ')', Color.DARK_GRAY)
+        drawBlock(xPos+28, yPos+9, ')', Color.DARK_GRAY)
+        drawBlock(xPos+32, yPos+9, ')', Color.GREEN)
+        drawBlock(xPos+36, yPos+9, ')', Color.DARK_GRAY)
+        drawBlock(xPos+40, yPos+9, ')', Color.GREEN)
+        drawBlock(xPos+44, yPos+9, ')', Color.DARK_GRAY)
+        drawBlock(xPos+48, yPos+9, '/', Color.DARK_GRAY)
+        drawBlock(xPos+52, yPos+9, ')', Color.DARK_GRAY)
+        drawBlock(xPos+56, yPos+9, ')', Color.DARK_GRAY)
+        drawBlock(xPos+60, yPos+9, '/', Color.DARK_GRAY)
 
-        drawRow('$', '#', '/', '/', '$', '/',
-            '#', '#', '#', '$', '$', '#', '$', '$', '$', ')', color = Color.DARK_GRAY, y = yPos+15)
+        drawRow('$', '/', '$', '#', ')', '$',
+            '$', '$', ')', ')', ')', ','/*Pixel*/, '/', '$', ')', '/', color = Color.DARK_GRAY, y = yPos+12)
 
-        drawRow(')', '#', '$', '$', '"', '$',
-            '$', ')', ')', '$', ')', ')', '$', '/', '$', '/', color = Color.DARK_GRAY, y = yPos+18)
+        drawRow('/', ')', '$', '$', '/', '$',
+            ')', ')', ')', '/', '/', ')', '/', '/', '/', '#', color = Color.DARK_GRAY, y = yPos+15)
 
-        drawRow(')', '$', ')', ')', '/', '/',
-            '$', '$', '/', '/', '/', '/', '$', '$', '/', '/', color = Color.DARK_GRAY, y = yPos+21)
+        drawRow('#', ')', '/', '/', '"'/*Pixel*/, '/',
+            '/', '#', '#', '/', '#', '#', '/', '$', '/', '$', color = Color.DARK_GRAY, y = yPos+18)
 
-        drawRow('/', '$', '$', '/', '$', '/',
-            '$', '/', '$', '/', '/', '$', '$', '$', '#', '$', color = Color.DARK_GRAY, y = yPos+24)
+        drawRow('#', '/', '#', '#', '$', '$',
+            '/', '/', '$', '$', '$', '$', '/', '/', '$', '$', color = Color.DARK_GRAY, y = yPos+21)
 
-        drawRow('/', '/', '#', '$', '$', '#',
-            '#', '$', '$', '$', '$', '$', ')', ')', '$', '/', color = Color.DARK_GRAY, y = yPos+27)
+        drawRow('$', '/', '/', '$', '/', '$',
+            '/', '$', '/', '$', '$', '/', '/', '/', ')', '/', color = Color.DARK_GRAY, y = yPos+24)
 
-        drawRow('/', '/', '$', ')', ')', '$',
-            ')', '/', '/', ')', ')', '$', '/', '/', '"', '$', color = Color.DARK_GRAY, y = yPos+30)
+        drawRow('$', '$', ')', '/', '/', ')',
+            ')', '/', '/', '/', '/', '/', '#', '#', '/', '$', color = Color.DARK_GRAY, y = yPos+27)
+
+        drawRow('$', '$', '/', '#', '#', '/',
+            '#', '$', '$', '#', '#', '/', '$', '$', '"'/*Pixel*/, '/', color = Color.DARK_GRAY, y = yPos+30)
 
         if (render) Renderer.renderScreen()
     }
