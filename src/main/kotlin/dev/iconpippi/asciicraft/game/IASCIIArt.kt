@@ -6,7 +6,7 @@ package dev.iconpippi.asciicraft.game
  *
  * @author IconPippi
  */
-interface ASCIIArt {
+interface IASCIIArt {
 
     var xPos: Int
     var yPos: Int

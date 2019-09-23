@@ -2,29 +2,32 @@ package dev.iconpippi.asciicraft.game
 
 import dev.iconpippi.asciicraft.engine.DisplayManager
 import dev.iconpippi.asciicraft.engine.Renderer
-import dev.iconpippi.asciicraft.game.art.AsciiCraftLogo
-import dev.iconpippi.asciicraft.game.art.AsciiCraftTitle
-import java.awt.Color
+import dev.iconpippi.asciicraft.game.art.ASCIICraftLogo
+import dev.iconpippi.asciicraft.game.art.ASCIICraftTitle
 
 /**
  * 19/9/2019
- * This class is only being used for engine testing at the moment
+ * Main class for AsciiCraft game
  *
  * @author IconPippi
  */
-class AsciiCraft : Thread() {
+class AsciiCraft {
 
     /**
      * Start the game
      */
-    override fun start() {
+    fun start() {
         DisplayManager.setupConsole()
 
-        AsciiCraftLogo.xPos = 21
-        AsciiCraftLogo.draw(false)
-        AsciiCraftTitle.draw(false)
+        drawMainMenu()
 
         Renderer.renderScreen()
+    }
+
+    private fun drawMainMenu() {
+        ASCIICraftLogo.xPos = 21
+        ASCIICraftLogo.draw(false)
+        ASCIICraftTitle.draw(false)
     }
 
 }

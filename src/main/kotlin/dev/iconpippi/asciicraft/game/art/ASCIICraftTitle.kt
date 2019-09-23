@@ -1,7 +1,7 @@
 package dev.iconpippi.asciicraft.game.art
 
 import dev.iconpippi.asciicraft.engine.Renderer
-import dev.iconpippi.asciicraft.game.ASCIIArt
+import dev.iconpippi.asciicraft.game.IASCIIArt
 import java.awt.Color
 
 /**
@@ -10,7 +10,7 @@ import java.awt.Color
  *
  * @author IconPippi
  */
-object AsciiCraftTitle : ASCIIArt {
+object ASCIICraftTitle : IASCIIArt {
 
     override var xPos: Int = 30
     override var yPos: Int = 25

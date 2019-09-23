@@ -4,6 +4,7 @@ import dev.iconpippi.asciicraft.engine.display.ASCIIDisplay
 import dev.iconpippi.asciicraft.engine.display.components.ASCIIChar
 import dev.iconpippi.asciicraft.engine.display.components.Pixel
 import java.awt.Color
+import java.io.File
 
 /**
  * 19/9/2019
@@ -129,6 +130,27 @@ object Renderer {
                         asciiDisplay.lines[i].addChar(j, ASCIIChar(char, color))
                     }
                 }
+            }
+        }
+    }
+
+    /**
+     * Draw a texture from a given file
+     *
+     * @param x X pos
+     * @param y Y pos
+     * @param textureFile Target file
+     */
+    fun drawTexture(x: Int, y: Int, textureFile: File) {
+        val resource = this.javaClass.getResource(textureFile.absolutePath)
+        val lines = resource.file.reader().readLines()
+
+        for (line: Int in lines.indices) { //Loop through every line
+            for (charPos in lines[line].indices) { //Loop through every char in a line
+                //Draw each char in his x and y
+                drawChar(x+charPos, y-line,
+                    lines[line].toCharArray()[charPos],
+                    Color.RED)
             }
         }
     }

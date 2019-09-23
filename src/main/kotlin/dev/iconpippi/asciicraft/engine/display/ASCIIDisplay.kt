@@ -49,7 +49,7 @@ class ASCIIDisplay(private val width: Int, private val height: Int, name: String
 
         mainFrame.contentPane.background = Color.BLACK
 
-        //mainFrame.iconImage = Toolkit.getDefaultToolkit().getImage(this.javaClass.getResource("AsciiCraftLogo.png"))
+        //mainFrame.iconImage = Toolkit.getDefaultToolkit().getImage(this.javaClass.classLoader.getResource("src/main/resources/AsciiCraftLogo.png"))
 
         pixelArea.font = Font("Courier New", Font.BOLD, 12)
 
@@ -67,6 +67,13 @@ class ASCIIDisplay(private val width: Int, private val height: Int, name: String
      */
     fun show() {
         mainFrame.isVisible = true
+    }
+
+    /**
+     * Clear the display
+     */
+    fun clear() {
+        pixelArea.text = ""
     }
 
     /**
