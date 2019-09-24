@@ -156,6 +156,8 @@ object ASCIICraftTitle : IASCIIArt {
         Renderer.drawChar(xPos+39, yPos-4, '_', Color.RED)
         Renderer.drawChar(xPos+40, yPos-4, '_', Color.RED)
         Renderer.drawChar(xPos+42, yPos-4, '_', Color.RED)
+
+        if (render) Renderer.renderScreen()
     }
 
 }

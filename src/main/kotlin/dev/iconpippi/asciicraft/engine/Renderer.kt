@@ -5,6 +5,7 @@ import dev.iconpippi.asciicraft.engine.display.components.ASCIIChar
 import dev.iconpippi.asciicraft.engine.display.components.Pixel
 import java.awt.Color
 import java.io.File
+import java.nio.file.Files
 
 /**
  * 19/9/2019
@@ -47,6 +48,53 @@ object Renderer {
      */
     fun drawChar(x: Int, y: Int, char: Char, color: Color) {
         asciiDisplay.lines[y].addChar(x, ASCIIChar(char, color))
+    }
+
+    /**
+     * Draw a string
+     *
+     * @param x X position
+     * @param y Y position
+     * @param string String
+     * @param color Color
+     */
+    fun drawString(x: Int, y: Int, string: String, color: Color) {
+        for (i in string.indices) {
+            drawChar(x+1, y, string[i], color)
+        }
+    }
+
+    /**
+    * Draw the text contained in a given file
+    *
+    * @param x X pos
+    * @param y Y pos
+    * @param resource Target file
+    * @param color Color
+    */
+    fun drawFile(x: Int, y: Int, resource: File, color: Color) {
+        val lines = Files.readAllLines(resource.toPath())
+
+        drawLines(x, y, lines, color)
+    }
+
+    /**
+     * Draw a list of lines
+     * The lines will be drawn from top to bottom
+     *
+     * @param x X pos
+     * @param y Pos
+     * @param lines Lines
+     * @param color Color
+     */
+    fun drawLines(x: Int, y: Int, lines: List<String>, color: Color) {
+        for (line: Int in lines.indices) {
+            for (charPos in lines[line].indices) {
+                drawChar(x+charPos, y+line,
+                    lines[line].toCharArray()[charPos],
+                    color)
+            }
+        }
     }
 
     /**
@@ -130,27 +178,6 @@ object Renderer {
                         asciiDisplay.lines[i].addChar(j, ASCIIChar(char, color))
                     }
                 }
-            }
-        }
-    }
-
-    /**
-     * Draw a texture from a given file
-     *
-     * @param x X pos
-     * @param y Y pos
-     * @param textureFile Target file
-     */
-    fun drawTexture(x: Int, y: Int, textureFile: File) {
-        val resource = this.javaClass.getResource(textureFile.absolutePath)
-        val lines = resource.file.reader().readLines()
-
-        for (line: Int in lines.indices) { //Loop through every line
-            for (charPos in lines[line].indices) { //Loop through every char in a line
-                //Draw each char in his x and y
-                drawChar(x+charPos, y-line,
-                    lines[line].toCharArray()[charPos],
-                    Color.RED)
             }
         }
     }
