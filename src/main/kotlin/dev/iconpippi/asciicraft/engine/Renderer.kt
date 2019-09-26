@@ -28,6 +28,13 @@ object Renderer {
     }
 
     /**
+     * Clear the screen
+     */
+    fun clearScreen() {
+        asciiDisplay.clear()
+    }
+
+    /**
      * Draw a pixel
      *
      * @param x X position (max 113)

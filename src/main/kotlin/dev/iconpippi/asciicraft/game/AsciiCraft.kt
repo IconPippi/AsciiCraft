@@ -1,13 +1,10 @@
 package dev.iconpippi.asciicraft.game
 
 import dev.iconpippi.asciicraft.engine.DisplayManager
-import dev.iconpippi.asciicraft.engine.Renderer
-import dev.iconpippi.asciicraft.game.art.ASCIICraftLogo
-import dev.iconpippi.asciicraft.game.art.ASCIICraftTitle
-import dev.iconpippi.asciicraft.game.art.LoginText
-import dev.iconpippi.asciicraft.game.art.QuitText
-import java.awt.Color
-import java.io.File
+import dev.iconpippi.asciicraft.game.art.ArtManager
+import dev.iconpippi.asciicraft.game.event.EventsManager
+import dev.iconpippi.asciicraft.game.event.KeyEvent
+import dev.iconpippi.asciicraft.game.listeners.MainMenuListener
 
 /**
  * 19/9/2019
@@ -15,7 +12,16 @@ import java.io.File
  *
  * @author IconPippi
  */
-class AsciiCraft {
+object AsciiCraft {
+
+    var mainMenu: Boolean = false
+    var loginScreen: Boolean = false
+
+    init {
+        //Register all needed key events
+        EventsManager.registerEvent(KeyEvent(java.awt.event.KeyEvent.VK_Q, MainMenuListener)) //Login
+        EventsManager.registerEvent(KeyEvent(java.awt.event.KeyEvent.VK_L, MainMenuListener)) //Quit
+    }
 
     /**
      * Start the game
@@ -23,17 +29,8 @@ class AsciiCraft {
     fun start() {
         DisplayManager.setupConsole()
 
-        drawMainMenu()
-
-        Renderer.renderScreen()
-    }
-
-    private fun drawMainMenu() {
-        ASCIICraftLogo.xPos = 21
-        ASCIICraftLogo.draw(false)
-        ASCIICraftTitle.draw(false)
-        LoginText.draw(false)
-        QuitText.draw(false)
+        mainMenu = true
+        ArtManager.drawMainMenu(true)
     }
 
 }

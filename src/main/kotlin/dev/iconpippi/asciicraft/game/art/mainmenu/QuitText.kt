@@ -1,7 +1,7 @@
-package dev.iconpippi.asciicraft.game.art
+package dev.iconpippi.asciicraft.game.art.mainmenu
 
 import dev.iconpippi.asciicraft.engine.Renderer
-import dev.iconpippi.asciicraft.game.IASCIIArt
+import dev.iconpippi.asciicraft.game.art.IASCIIArt
 import java.awt.Color
 
 /**
@@ -12,8 +12,8 @@ import java.awt.Color
  */
 object QuitText : IASCIIArt {
 
-    override var xPos: Int = 37
-    override var yPos: Int = 43
+    override val xPos: Int = 37
+    override val yPos: Int = 43
 
     private val text: ArrayList<String> = ArrayList()
 
@@ -25,7 +25,7 @@ object QuitText : IASCIIArt {
     }
 
     override fun draw(render: Boolean) {
-        Renderer.drawLines(xPos, yPos, text, Color.BLUE)
+        Renderer.drawLines(37, 43, text, Color.BLUE)
 
         if (render) Renderer.renderScreen()
     }

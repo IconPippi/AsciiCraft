@@ -1,4 +1,4 @@
-package dev.iconpippi.asciicraft.game
+package dev.iconpippi.asciicraft.game.art
 
 /**
  * 21/9/2019
@@ -8,10 +8,10 @@ package dev.iconpippi.asciicraft.game
  */
 interface IASCIIArt {
 
-    /** Art X pos */
-    var xPos: Int
-    /** Art Y pos */
-    var yPos: Int
+    /** Art X position */
+    val xPos: Int
+    /** Art Y position */
+    val yPos: Int
 
     /**
      * Draw the art
