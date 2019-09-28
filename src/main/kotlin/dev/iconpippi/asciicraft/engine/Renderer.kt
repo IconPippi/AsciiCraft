@@ -32,6 +32,9 @@ object Renderer {
      */
     fun clearScreen() {
         asciiDisplay.clear()
+        asciiDisplay.lines.forEach {
+            it.clear()
+        }
     }
 
     /**

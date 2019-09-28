@@ -1,6 +1,6 @@
 package dev.iconpippi.asciicraft.game.listeners
 
-import dev.iconpippi.asciicraft.game.event.KeyEvent
+import dev.iconpippi.asciicraft.game.event.Event
 
 /**
  * 25/9/2019
@@ -15,6 +15,6 @@ interface IListener {
      *
      * @param e Key event
      */
-    fun handler(e: KeyEvent)
+    fun handler(e: Event)
 
 }

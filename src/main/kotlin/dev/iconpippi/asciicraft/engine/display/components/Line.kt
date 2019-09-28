@@ -54,6 +54,15 @@ class Line(private val display: ASCIIDisplay) {
     }
 
     /**
+     * Clear the line
+     */
+    fun clear() {
+        for (i in chars.indices) {
+            chars[i] = ASCIIChar(' ', Color.BLACK)
+        }
+    }
+
+    /**
      * Render the final string
      */
     fun render() {

@@ -1,7 +1,7 @@
-package dev.iconpippi.asciicraft.game.art
+package dev.iconpippi.asciicraft.game.art.other
 
 import dev.iconpippi.asciicraft.engine.Renderer
-import dev.iconpippi.asciicraft.game.art.IASCIIArt
+import dev.iconpippi.asciicraft.game.art.ASCIIArt
 import java.awt.Color
 
 /**
@@ -10,7 +10,7 @@ import java.awt.Color
  *
  * @author IconPippi
  */
-class ASCIICraftTitle(override var xPos: Int, override var yPos: Int) : IASCIIArt {
+class ASCIICraftTitle(override var xPos: Int, override var yPos: Int) : ASCIIArt() {
 
     override fun draw(render: Boolean) {
         Renderer.drawChar(xPos, yPos, '/', Color.RED)
