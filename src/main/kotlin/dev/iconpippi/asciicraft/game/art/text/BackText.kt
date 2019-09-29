@@ -6,23 +6,16 @@ import java.awt.Color
 
 /**
  * 28/9/2019
- * "Back" text ascii art
+ * "Back (B)" text ascii art
+ *
+ * @param xPos Art X pos
+ * @param yPos Art Y pos
  *
  * @author IconPippi
  */
-object BackText : ASCIIArt() {
+class BackText(override val xPos: Int, override val yPos: Int) : ASCIIArt, Text("BACK (B)") {
 
-    override val xPos: Int = 84
-    override val yPos: Int = 50
-
-    private val text: ArrayList<String> = ArrayList()
-
-    init {
-        text.add(" __   __   __         __")
-        text.add("|__/ |__| |   | /  / |__/ \\")
-        text.add("|  \\ |  | |   |\\  |  |  \\  |")
-        text.add("|__/ |  | |__ | \\  \\ |__/ /")
-    }
+    private val text: ArrayList<String> = generateText() as ArrayList<String>
 
     override fun draw(render: Boolean) {
         Renderer.drawLines(

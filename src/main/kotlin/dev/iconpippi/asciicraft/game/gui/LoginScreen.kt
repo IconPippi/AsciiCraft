@@ -22,7 +22,7 @@ object LoginScreen : Gui() {
         components as ArrayList
 
         components.add(ASCIICraftTitle(31, 5))
-        components.add(BackText)
+        components.add(BackText(83, 50))
 
         //Register key events
         EventRegisterer.registerEvent(KeyEvent(java.awt.event.KeyEvent.VK_B), LoginScreenListener) //Back

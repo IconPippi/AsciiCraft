@@ -6,18 +6,18 @@ package dev.iconpippi.asciicraft.game.art
  *
  * @author IconPippi
  */
-abstract class ASCIIArt {
+interface ASCIIArt {
 
     /** Art X position */
-    abstract val xPos: Int
+    val xPos: Int
     /** Art Y position */
-    abstract val yPos: Int
+    val yPos: Int
 
     /**
      * Draw the art
      *
      * @param render Automatically render once finished drawing
      */
-    abstract fun draw(render: Boolean)
+    fun draw(render: Boolean)
 
 }

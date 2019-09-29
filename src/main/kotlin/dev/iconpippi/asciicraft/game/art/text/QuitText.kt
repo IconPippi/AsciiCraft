@@ -8,21 +8,14 @@ import java.awt.Color
  * 24/9/2019
  * This object represents the "QUIT (Q)" text in the main menu
  *
+ * @param xPos Art X pos
+ * @param yPos Art Y pos
+ *
  * @author IconPippi
  */
-object QuitText : ASCIIArt() {
+class QuitText(override val xPos: Int, override val yPos: Int) : ASCIIArt, Text("QUIT (Q)") {
 
-    override val xPos: Int = 37
-    override val yPos: Int = 43
-
-    private val text: ArrayList<String> = ArrayList()
-
-    init {
-        text.add(" __         ___      __")
-        text.add("|  | |  | |  |    / |  | \\")
-        text.add("|  | |  | |  |   |  |  |  |")
-        text.add("|__\\ |__| |  |    \\ |__\\ /")
-    }
+    private val text: ArrayList<String> = generateText() as ArrayList<String>
 
     override fun draw(render: Boolean) {
         Renderer.drawLines(

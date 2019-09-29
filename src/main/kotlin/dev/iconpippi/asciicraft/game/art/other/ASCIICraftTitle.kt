@@ -10,7 +10,7 @@ import java.awt.Color
  *
  * @author IconPippi
  */
-class ASCIICraftTitle(override var xPos: Int, override var yPos: Int) : ASCIIArt() {
+class ASCIICraftTitle(override var xPos: Int, override var yPos: Int) : ASCIIArt {
 
     override fun draw(render: Boolean) {
         Renderer.drawChar(xPos, yPos, '/', Color.RED)

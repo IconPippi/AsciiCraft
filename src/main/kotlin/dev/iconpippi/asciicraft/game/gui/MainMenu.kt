@@ -25,8 +25,8 @@ object MainMenu : Gui() {
 
         components.add(ASCIICraftLogo(23, 3))
         components.add(ASCIICraftTitle(31, 25))
-        components.add(LoginText)
-        components.add(QuitText)
+        components.add(LoginText(37, 37))
+        components.add(QuitText(37, 43))
 
         //Register key events
         EventRegisterer.registerEvent(KeyEvent(java.awt.event.KeyEvent.VK_Q), MainMenuListener) //Login
