@@ -18,6 +18,7 @@ import dev.iconpippi.asciicraft.game.event.KeyEvent
  */
 object MainMenu : Gui() {
 
+    override var drawn: Boolean = false
     override val components: List<ASCIIArt> = ArrayList()
 
     init {

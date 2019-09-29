@@ -11,18 +11,12 @@ import dev.iconpippi.asciicraft.game.gui.MainMenu
  */
 object AsciiCraft {
 
-    /** Main manu state */
-    var mainMenu: Boolean = false
-    /** Login screen state */
-    var loginScreen: Boolean = false
-
     /**
      * Start the game
      */
     fun start() {
         DisplayManager.setupConsole()
 
-        mainMenu = true
         MainMenu.draw(true)
     }
 

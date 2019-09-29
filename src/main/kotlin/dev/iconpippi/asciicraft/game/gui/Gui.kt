@@ -11,6 +11,9 @@ import dev.iconpippi.asciicraft.game.art.ASCIIArt
  */
 abstract class Gui {
 
+    /** Drawn */
+    abstract var drawn: Boolean
+
     /** ASCIIArt compoents for this interface */
     abstract val components: List<ASCIIArt>
 
@@ -20,6 +23,8 @@ abstract class Gui {
      * @param render True if you want to render the gui after finished drawing
      */
     fun draw(render: Boolean) {
+        drawn = true
+
         components.forEach {
             it.draw(false)
         }
@@ -31,6 +36,8 @@ abstract class Gui {
      * Hide the gui
      */
     fun hide() {
+        drawn = false
+
         Renderer.clearScreen()
     }
 

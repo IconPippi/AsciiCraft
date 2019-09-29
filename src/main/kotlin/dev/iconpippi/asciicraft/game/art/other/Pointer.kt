@@ -27,4 +27,16 @@ class Pointer(override var xPos: Int, override var yPos: Int) : ASCIIArt {
         if (render) Renderer.renderScreen()
     }
 
+     fun erase(render: Boolean) {
+        pointer.clear()
+        pointer.add("")
+        pointer.add("")
+        pointer.add("")
+        pointer.add("")
+
+        Renderer.drawLines(xPos, yPos, pointer, Color.BLACK)
+
+        if (render) Renderer.renderScreen()
+    }
+
 }

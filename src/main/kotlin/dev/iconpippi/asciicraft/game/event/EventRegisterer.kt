@@ -1,6 +1,5 @@
 package dev.iconpippi.asciicraft.game.event
 
-import com.sun.javafx.iio.common.ImageLoaderImpl
 import dev.iconpippi.asciicraft.game.event.internal.KeysListener
 import dev.iconpippi.asciicraft.game.listeners.IListener
 
