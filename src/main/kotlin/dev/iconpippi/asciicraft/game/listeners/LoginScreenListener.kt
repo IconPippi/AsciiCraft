@@ -15,11 +15,12 @@ import dev.iconpippi.asciicraft.game.gui.MainMenu
 object LoginScreenListener : IListener {
 
     override fun handler(e: Event) {
-        if (!AsciiCraft.loginScreen) return
+        if (!AsciiCraft.loginScreen && AsciiCraft.mainMenu) return
         e as KeyEvent
 
         when (e.keyCode) {
-            java.awt.event.KeyEvent.VK_B -> {
+            //TODO: Pointer controller
+            java.awt.event.KeyEvent.VK_ENTER -> {
                 AsciiCraft.loginScreen = false
                 AsciiCraft.mainMenu = true
 

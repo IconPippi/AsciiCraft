@@ -9,9 +9,9 @@ package dev.iconpippi.asciicraft.game.art
 interface ASCIIArt {
 
     /** Art X position */
-    val xPos: Int
+    var xPos: Int
     /** Art Y position */
-    val yPos: Int
+    var yPos: Int
 
     /**
      * Draw the art

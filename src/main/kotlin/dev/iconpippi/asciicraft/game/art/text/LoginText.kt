@@ -13,7 +13,7 @@ import java.awt.Color
  *
  * @author IconPippi
  */
-class LoginText(override val xPos: Int, override val yPos: Int) : ASCIIArt, Text("LOGIN (L)") {
+class LoginText(override var xPos: Int, override var yPos: Int) : ASCIIArt, Text("LOGIN") {
 
     private val text: ArrayList<String> = generateText() as ArrayList<String>
 

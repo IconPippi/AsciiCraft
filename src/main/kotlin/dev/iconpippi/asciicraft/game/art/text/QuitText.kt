@@ -13,7 +13,7 @@ import java.awt.Color
  *
  * @author IconPippi
  */
-class QuitText(override val xPos: Int, override val yPos: Int) : ASCIIArt, Text("QUIT (Q)") {
+class QuitText(override var xPos: Int, override var yPos: Int) : ASCIIArt, Text("QUIT") {
 
     private val text: ArrayList<String> = generateText() as ArrayList<String>
 

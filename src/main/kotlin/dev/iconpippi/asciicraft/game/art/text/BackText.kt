@@ -13,7 +13,7 @@ import java.awt.Color
  *
  * @author IconPippi
  */
-class BackText(override val xPos: Int, override val yPos: Int) : ASCIIArt, Text("BACK (B)") {
+class BackText(override var xPos: Int, override var yPos: Int) : ASCIIArt, Text("BACK") {
 
     private val text: ArrayList<String> = generateText() as ArrayList<String>
 

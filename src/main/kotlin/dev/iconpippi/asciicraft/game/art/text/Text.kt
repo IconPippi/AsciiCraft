@@ -144,7 +144,7 @@ abstract class Text(private val text: String) {
                     line1.append("____ ")
                     line2.append("  |  ")
                     line3.append("  |  ")
-                    line4.append("  |  ")
+                    line4.append("  | ")
                 }
                 'u' -> {
                     line1.append("     ")

@@ -5,6 +5,7 @@ import dev.iconpippi.asciicraft.game.AsciiCraft
 import dev.iconpippi.asciicraft.game.event.Event
 import dev.iconpippi.asciicraft.game.event.KeyEvent
 import dev.iconpippi.asciicraft.game.gui.LoginScreen
+import dev.iconpippi.asciicraft.game.gui.MainMenu
 import kotlin.system.exitProcess
 
 /**
@@ -16,21 +17,45 @@ import kotlin.system.exitProcess
 object MainMenuListener : IListener {
 
     override fun handler(e: Event) {
-        if (!AsciiCraft.mainMenu) return
+        if (!AsciiCraft.mainMenu && AsciiCraft.loginScreen) return
         e as KeyEvent
 
         when (e.keyCode) {
-            java.awt.event.KeyEvent.VK_Q -> { //Quit
-                exitProcess(0) //quit the game
-            }
-            java.awt.event.KeyEvent.VK_L -> { //Login
-                AsciiCraft.mainMenu = false
-                AsciiCraft.loginScreen = true
-                Renderer.clearScreen()
+            java.awt.event.KeyEvent.VK_UP -> {
+                val pointer = MainMenu.components.component5() //Get pointer object
 
-                LoginScreen.draw(true)
+                if (pointer.yPos != 37) pointer.yPos = 37 //If it isn't already at the top of the choices, move up
+                else return
+
+                //Update GUI
+                //TODO: Better updating system
+                MainMenu.hide()
+                MainMenu.draw(true)
+            }
+            java.awt.event.KeyEvent.VK_DOWN -> {
+                val pointer = MainMenu.components.component5()
+
+                if (pointer.yPos != 43) pointer.yPos = 43
+                else return
+
+                MainMenu.hide()
+                MainMenu.draw(true)
+            }
+            java.awt.event.KeyEvent.VK_ENTER -> {
+                val pointer = MainMenu.components.component5()
+
+                if (pointer.yPos == 37) loginScreen() //If it's pointing to login text -> login screen
+                else if (pointer.yPos == 43) exitProcess(0) //If it's pointing to quit text -> quit
             }
         }
+    }
+
+    private fun loginScreen() {
+        AsciiCraft.mainMenu = false
+        AsciiCraft.loginScreen = true
+        Renderer.clearScreen()
+
+        LoginScreen.draw(true)
     }
 
 }
