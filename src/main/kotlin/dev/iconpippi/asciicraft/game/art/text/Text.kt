@@ -1,16 +1,25 @@
 package dev.iconpippi.asciicraft.game.art.text
 
+import dev.iconpippi.asciicraft.engine.Renderer
+import dev.iconpippi.asciicraft.game.art.ASCIIArt
+import java.awt.Color
 import java.lang.StringBuilder
 
 /**
  * 28/9/2019
- * This abstract class generates ASCII text art
+ * This class generates ASCII text art
  *
  * @param text The text you want to generate
+ * @param color Text color
  *
  * @author IconPippi
  */
-abstract class Text(private val text: String) {
+class Text(
+    override var xPos: Int,
+    override var yPos: Int,
+    val text: String,
+    private val color: Color
+) : ASCIIArt {
 
     //Lines
     private val line1: StringBuilder = StringBuilder()
@@ -18,12 +27,14 @@ abstract class Text(private val text: String) {
     private val line3: StringBuilder = StringBuilder()
     private val line4: StringBuilder = StringBuilder()
 
+    private val finalText: List<String>
+
     /**
      * Generate the text
      *
      * @return The text as a list of lines
      */
-    fun generateText(): List<String> {
+    private fun generateText(): List<String> {
         text.toCharArray().forEach {
             when (it.toLowerCase()) {
                 'a' -> {
@@ -105,9 +116,9 @@ abstract class Text(private val text: String) {
                     line4.append("|  | ")
                 }
                 'n' -> {
-                    line1.append("      ")
-                    line2.append("|\\ |  ")
-                    line3.append("| \\|  ")
+                    line1.append("     ")
+                    line2.append("|\\ | ")
+                    line3.append("| \\| ")
                     line4.append("|  | ")
                 }
                 'o' -> {
@@ -162,7 +173,7 @@ abstract class Text(private val text: String) {
                     line1.append("     ")
                     line2.append("|  | ")
                     line3.append("|  | ")
-                    line4.append("|/\\|  ")
+                    line4.append("|/\\| ")
                 }
                 'x' -> {
                     line1.append("     ")
@@ -210,6 +221,14 @@ abstract class Text(private val text: String) {
         list.add(line4.toString())
 
         return list
+    }
+
+    init { finalText = generateText() }
+
+    override fun draw(render: Boolean) {
+        Renderer.drawLines(xPos, yPos, finalText, color)
+
+        if (render) Renderer.renderScreen()
     }
 
 }

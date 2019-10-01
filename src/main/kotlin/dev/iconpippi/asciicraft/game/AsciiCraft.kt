@@ -17,7 +17,7 @@ object AsciiCraft {
     fun start() {
         DisplayManager.setupConsole()
 
-        MainMenu.draw(true)
+        MainMenu.init().draw(true)
     }
 
 }

@@ -2,6 +2,7 @@ package dev.iconpippi.asciicraft.engine
 
 import dev.iconpippi.asciicraft.engine.display.ASCIIDisplay
 import dev.iconpippi.asciicraft.engine.display.components.ASCIIChar
+import dev.iconpippi.asciicraft.engine.display.components.Line
 import dev.iconpippi.asciicraft.engine.display.components.Pixel
 import java.awt.Color
 import java.io.File
@@ -16,7 +17,7 @@ import java.nio.file.Files
 object Renderer {
 
     private val asciiDisplay: ASCIIDisplay = DisplayManager.asciiDisplay
-
+    
     /**
      * Render the screen
      */

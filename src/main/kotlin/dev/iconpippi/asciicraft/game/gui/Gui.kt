@@ -15,7 +15,7 @@ abstract class Gui {
     abstract var drawn: Boolean
 
     /** ASCIIArt compoents for this interface */
-    abstract val components: List<ASCIIArt>
+    abstract val components: ArrayList<ASCIIArt>
 
     /**
      * Draw the GUI
@@ -33,12 +33,26 @@ abstract class Gui {
     }
 
     /**
-     * Hide the gui
+     * Erase the gui
+     */
+    fun erase() {
+        drawn = false
+
+        components.clear()
+        Renderer.clearScreen()
+    }
+
+    /**
+     * Hide the GUI
      */
     fun hide() {
         drawn = false
-
         Renderer.clearScreen()
     }
+
+    /**
+     * Init your gui components
+     */
+    abstract fun init(): Gui
 
 }
