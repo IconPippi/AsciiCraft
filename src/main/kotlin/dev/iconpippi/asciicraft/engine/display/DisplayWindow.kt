@@ -17,7 +17,7 @@ import javax.swing.text.StyledDocument
  *
  * @author IconPippi
  */
-class ASCIIDisplay(private val width: Int, private val height: Int, name: String) {
+class DisplayWindow(private val width: Int, private val height: Int, name: String) {
 
     //Swing components
     private val mainFrame = JFrame(name)

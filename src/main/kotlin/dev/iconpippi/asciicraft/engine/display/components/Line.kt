@@ -1,6 +1,6 @@
 package dev.iconpippi.asciicraft.engine.display.components
 
-import dev.iconpippi.asciicraft.engine.display.ASCIIDisplay
+import dev.iconpippi.asciicraft.engine.display.DisplayWindow
 import java.awt.Color
 import javax.swing.text.SimpleAttributeSet
 import javax.swing.text.StyleConstants
@@ -9,11 +9,11 @@ import javax.swing.text.StyleConstants
  * 20/9/2019
  * ASCII display line
  *
- * @param display ASCII display (where the lines will be rendered)
+ * @param displayWindow ASCII display (where the lines will be rendered)
  *
  * @author IconPippi
  */
-class Line(private val display: ASCIIDisplay) {
+class Line(private val displayWindow: DisplayWindow) {
 
     //Pixels and ASCII chars
     private val pixels: HashMap<Int, Color> = HashMap()
@@ -72,18 +72,18 @@ class Line(private val display: ASCIIDisplay) {
         for (i in chars.indices) {
             StyleConstants.setForeground(painter, chars[i].color)
 
-            display.textComponent.insertString(line!!*113+i, chars[i].char.toString(), painter)
+            displayWindow.textComponent.insertString(line!!*113+i, chars[i].char.toString(), painter)
         }
 
         //Loop through every pixel and assign its respective color
         pixels.forEach {
             StyleConstants.setBackground(painter, it.component2())
 
-            display.textComponent.insertString(line!!*113+it.component1(), " ", painter)
+            displayWindow.textComponent.insertString(line!!*113+it.component1(), " ", painter)
         }
 
         //Render the final line
-        display.textComponent.insertString(line!!*113+112, "\n", painter)
+        displayWindow.textComponent.insertString(line!!*113+112, "\n", painter)
     }
 
 }

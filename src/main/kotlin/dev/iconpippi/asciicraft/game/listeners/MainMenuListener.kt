@@ -20,23 +20,22 @@ object MainMenuListener : IListener {
         if (!MainMenu.drawn) return
         e as KeyEvent
 
+        Thread.sleep(200)
         when (e.keyCode) {
             java.awt.event.KeyEvent.VK_UP -> {
                 val pointer = MainMenu.components.component5() as Pointer //Get pointer object
 
                 try {
                     pointer.switch("up")
-                    MainMenu.hide()
-                    MainMenu.draw(true)
+                    MainMenu.refresh()
                 } catch (e: Exception) {return}
             }
             java.awt.event.KeyEvent.VK_DOWN -> {
                 val pointer = MainMenu.components.component5() as Pointer
 
-                try { //TODO: NO WORKIE
+                try {
                     pointer.switch("down")
-                    MainMenu.hide()
-                    MainMenu.draw(true)
+                    MainMenu.refresh()
                 } catch (e: Exception) {return}
             }
             java.awt.event.KeyEvent.VK_ENTER -> {

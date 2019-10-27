@@ -188,10 +188,10 @@ class Text(
                     line4.append(" |   ")
                 }
                 'z' -> {
-                    line1.append(" ___ ")
-                    line2.append("   / ")
-                    line3.append("  /  ")
-                    line4.append(" /__ ")
+                    line1.append("___ ")
+                    line2.append("  / ")
+                    line3.append(" /  ")
+                    line4.append("/__ ")
                 }
                 '(' -> {
                     line1.append("  ")
@@ -205,11 +205,29 @@ class Text(
                     line3.append(" | ")
                     line4.append("/  ")
                 }
+                ':' -> {
+                    line1.append("  ")
+                    line2.append("| ")
+                    line3.append("  ")
+                    line4.append("| ")
+                }
+                '_' -> {
+                    line1.append("    ")
+                    line2.append("    ")
+                    line3.append("    ")
+                    line4.append("____ ")
+                }
                 ' ' -> {
                     line1.append(" ")
                     line2.append(" ")
                     line4.append(" ")
                     line4.append(" ")
+                }
+                '*' -> {
+                    line1.append("*** ")
+                    line2.append("*** ")
+                    line3.append("*** ")
+                    line4.append("*** ")
                 }
             }
         }

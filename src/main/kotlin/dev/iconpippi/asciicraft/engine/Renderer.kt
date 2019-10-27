@@ -1,8 +1,7 @@
 package dev.iconpippi.asciicraft.engine
 
-import dev.iconpippi.asciicraft.engine.display.ASCIIDisplay
+import dev.iconpippi.asciicraft.engine.display.DisplayWindow
 import dev.iconpippi.asciicraft.engine.display.components.ASCIIChar
-import dev.iconpippi.asciicraft.engine.display.components.Line
 import dev.iconpippi.asciicraft.engine.display.components.Pixel
 import java.awt.Color
 import java.io.File
@@ -16,15 +15,15 @@ import java.nio.file.Files
  */
 object Renderer {
 
-    private val asciiDisplay: ASCIIDisplay = DisplayManager.asciiDisplay
+    lateinit var DISPLAY_WINDOW: DisplayWindow
     
     /**
      * Render the screen
      */
     fun renderScreen() {
-        for (i in asciiDisplay.lines.indices) {
-            asciiDisplay.lines[i].line(i)
-            asciiDisplay.lines[i].render()
+        for (i in DISPLAY_WINDOW.lines.indices) {
+            DISPLAY_WINDOW.lines[i].line(i)
+            DISPLAY_WINDOW.lines[i].render()
         }
     }
 
@@ -32,8 +31,8 @@ object Renderer {
      * Clear the screen
      */
     fun clearScreen() {
-        asciiDisplay.clear()
-        asciiDisplay.lines.forEach {
+        DISPLAY_WINDOW.clear()
+        DISPLAY_WINDOW.lines.forEach {
             it.clear()
         }
     }
@@ -46,7 +45,7 @@ object Renderer {
      * @param color Color
      */
     fun drawPixel(x: Int, y: Int, color: Color) {
-        asciiDisplay.lines[y].addPixel(x, Pixel(color))
+        DISPLAY_WINDOW.lines[y].addPixel(x, Pixel(color))
     }
 
     /**
@@ -58,7 +57,7 @@ object Renderer {
      * @param color Color
      */
     fun drawChar(x: Int, y: Int, char: Char, color: Color) {
-        asciiDisplay.lines[y].addChar(x, ASCIIChar(char, color))
+        DISPLAY_WINDOW.lines[y].addChar(x, ASCIIChar(char, color))
     }
 
     /**
@@ -123,13 +122,13 @@ object Renderer {
             if (x1 < x2) {
                 for (i in y2 until y1) {
                     for (j in x1 until x2) {
-                        asciiDisplay.lines[i].addPixel(j, Pixel(color))
+                        DISPLAY_WINDOW.lines[i].addPixel(j, Pixel(color))
                     }
                 }
             } else {
                 for (i in y2 until y1) {
                     for (j in x2 until x1) {
-                        asciiDisplay.lines[i].addPixel(j, Pixel(color))
+                        DISPLAY_WINDOW.lines[i].addPixel(j, Pixel(color))
                     }
                 }
             }
@@ -137,13 +136,13 @@ object Renderer {
             if (x1 < x2) {
                 for (i in y1 until y2) {
                     for (j in x1 until x2) {
-                        asciiDisplay.lines[i].addPixel(j, Pixel(color))
+                        DISPLAY_WINDOW.lines[i].addPixel(j, Pixel(color))
                     }
                 }
             } else {
                 for (i in y1 until y2) {
                     for (j in x2 until x1) {
-                        asciiDisplay.lines[i].addPixel(j, Pixel(color))
+                        DISPLAY_WINDOW.lines[i].addPixel(j, Pixel(color))
                     }
                 }
             }
@@ -166,13 +165,13 @@ object Renderer {
             if (x1 < x2) {
                 for (i in y2 until y1) {
                     for (j in x1 until x2) {
-                        asciiDisplay.lines[i].addChar(j, ASCIIChar(char, color))
+                        DISPLAY_WINDOW.lines[i].addChar(j, ASCIIChar(char, color))
                     }
                 }
             } else {
                 for (i in y2 until y1) {
                     for (j in x2 until x1) {
-                        asciiDisplay.lines[i].addChar(j, ASCIIChar(char, color))
+                        DISPLAY_WINDOW.lines[i].addChar(j, ASCIIChar(char, color))
                     }
                 }
             }
@@ -180,13 +179,13 @@ object Renderer {
             if (x1 < x2) {
                 for (i in y1 until y2) {
                     for (j in x1 until x2) {
-                        asciiDisplay.lines[i].addChar(j, ASCIIChar(char, color))
+                        DISPLAY_WINDOW.lines[i].addChar(j, ASCIIChar(char, color))
                     }
                 }
             } else {
                 for (i in y1 until y2) {
                     for (j in x2 until x1) {
-                        asciiDisplay.lines[i].addChar(j, ASCIIChar(char, color))
+                        DISPLAY_WINDOW.lines[i].addChar(j, ASCIIChar(char, color))
                     }
                 }
             }

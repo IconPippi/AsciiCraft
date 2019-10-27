@@ -51,6 +51,14 @@ abstract class Gui {
     }
 
     /**
+     * Refresh the GUI
+     */
+    fun refresh() {
+        hide()
+        draw(true)
+    }
+
+    /**
      * Init your gui components
      */
     abstract fun init(): Gui

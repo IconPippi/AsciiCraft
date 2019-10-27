@@ -1,7 +1,8 @@
 package dev.iconpippi.asciicraft.game
 
-import dev.iconpippi.asciicraft.engine.DisplayManager
+import dev.iconpippi.asciicraft.engine.WindowManager
 import dev.iconpippi.asciicraft.game.gui.MainMenu
+import java.io.File
 
 /**
  * 19/9/2019
@@ -11,13 +12,17 @@ import dev.iconpippi.asciicraft.game.gui.MainMenu
  */
 object AsciiCraft {
 
+    val gameFiles: File = File("asciicraft")
+
     /**
      * Start the game
      */
     fun start() {
-        DisplayManager.setupConsole()
+        WindowManager.createDisplay(true)
 
         MainMenu.init().draw(true)
+
+        if (!gameFiles.exists()) gameFiles.mkdir()
     }
 
 }
